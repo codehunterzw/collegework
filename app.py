@@ -69,7 +69,7 @@ def object_detection(search_key,frame, model):
 def main():
     """Deployment using Streamlit"""
     st.title("Object Detection")
-    st.text("Built with Streamlit and Inceptionv3")
+    st.text("Built with Streamlit and Inceptionv3, by Nhawu and Gwatidzo")
 
     activities = ["Detect Objects", "About"]
     choice = st.sidebar.selectbox("Choose Activity", activities)
@@ -83,7 +83,7 @@ def main():
             path = video_file.name
             with open(path,mode='wb') as f: 
                 f.write(video_file.read())         
-                st.success("Saved File")
+                st.success("File Saved")
                 video_file = open(path, "rb").read()
                 st.video(video_file)
             cap = cv2.VideoCapture(path)
@@ -140,7 +140,10 @@ def main():
                     cv2.destroyAllWindows()
 
     elif choice == "About":
-        st.subheader('Max')
+        st.subheader('APP DEVELOPED BY:')
+        st.subheader('GWATIDZO M - R204550X')
+        st.subheader('NHAWU TAKUDZWA - R204555Y')
+        st.subheader('For - HCS212 - Group Assignment: Computer Vision')
         
         
 if __name__ == '__main__':
